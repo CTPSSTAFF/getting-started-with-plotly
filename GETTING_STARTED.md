@@ -55,10 +55,11 @@ Find (or create) a folder on your laptop or your favorite file server in which t
 when developing plotly. __Please note: A folder in Google Drive is not suitable for this purpose.__
 
 ## Plotly visualization 101
-This section will walk you through creating your first visualization with plotly - a line chart that simply
-plots a bunch of points on an \[x,y\] grid and connects the points with a line. The "guts" of this have
-been unashamedly borrowed from plotly's own website, but I've added quite a bit of background information
-that's not given there.
+This section will walk you through creating your first visualization with plotly - a pie chart that 
+displays the transportation "mode share" for the City of Boston from 1990 to 2014. 
+The data was taken from a document on the City of Boston's website (
+The structure of the code have been unashamedly borrowed from plotly's own website, 
+but I've added quite a bit of background information that's not given there.
 
 These are the steps we will be going through:
 1. Identifying a place in which to work
@@ -109,7 +110,7 @@ http://localhost:8888
 If you've done everyting correctly thus far, you'll see a page displaying the text "Hello, world!"
 
 Notes: 
-1. The __localhost__ in the URL you just enetered refers to the webserver that you just launched on your PC (your "local host".)
+1. The __localhost__ in the URL you just enetered refers to the webserver that you just launched on your PC (your "local host machine".)
 2. The __8888__ is the number of the port on which the webserver is listening for requests.
 3. By default, this webserver (and most webservers, in general\) are configured to render the page named __index.html__ in their "root" directory.
 
@@ -125,10 +126,29 @@ http://localhost:8888/index2.html
 And you'll see that a different page is now displayed.
 
 ### 3. Creating your first visualization
+Our first visualization will be a pie chart displaying transportation mode share data for the City of Boston between 1990 and 2014.
+The data for this visualization is obviously pre-pandemic, so bear this in mind.
 
+Let's the HTML page with this visualization into your web browser \(don't worry, all the work has already been done for you\),
+and take a look at it.
+First, download the file __first\_visualizaiton.html__ into your __viz\_home__ folder, and open it in a tab in your web browser:
+```
+http://localhost:8888/first_visualization.html
+```
+Not bad, and it's displaying genuinely useful information to boot.
+There are many cases in which this sort of visualization would do the job nicely.
+Some of these might include:
+1. mode-share data (of course)
+2. TIP project funding breakdowns
+3. demographic breakdowns
+4. and so on.
+
+Let's next look under the hood to understand how this visualization works,
+how it can be tweaked, and how we can generate the same kind of pie chart 
+using a different dataset.
 
 ### 3. Looking under the hood
-
+Open the file __first\_visualization.html__ in your chosen text editor.
 
 ### 4. Tweaking your visualization
 
