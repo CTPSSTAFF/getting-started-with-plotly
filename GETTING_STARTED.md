@@ -1,5 +1,4 @@
 # Getting Started with Plotly
-
 This repository is devoted to getting you started creating data visualizations with the plotly.js library.
 It describes what you'll need to work with plotly, offers instructions on creating your first visualization
 with plotly (and tweaking it!), and provides "templates" for the most common types of visualizations 
@@ -12,7 +11,7 @@ First things first: you need to have a few things lined up in order to get start
 You will need the following:
 * Anaconda (including Python)
 * A web browser (Google Chrome preferred)
-* A text editor, such as Notepad++, VS Code, Gvim, or Emacs
+* A text editor, such as Notepad++, VS Code, Sublime Txt, Emacs, or Vim
 * A place to store files
 
 ### Anaconda (including Python)
@@ -39,7 +38,7 @@ It has all the functionality (and more) required to create data visualizations w
 You can install Notepad++ on your CTPS laptop if you have 'Admin' priveledges
 on it; if not, ask the CTPS Computer Resources staff to install it for you.
 
-Microsoft [VS Code]9https://code.visualstudio.com/) or [Sublime Text](https://www.sublimetext.com/) 
+Microsoft [VS Code](https://code.visualstudio.com/) or [Sublime Text](https://www.sublimetext.com/) 
 are recommended for people whose work involves writing a lot of code in general \(not just data visualizations\).
 
 Finally, die-hard nerds might consider [GNU Emacs](https://www.gnu.org/software/emacs/) or [Vim](https://www.vim.org/download.php).
@@ -85,9 +84,8 @@ Let's launch your webserver, and verify that it's working.
 
 In order to do this,run:
 ```
-__Start->Anaconda _(64-bit_) -> Anaconda Prompt \(anaconda3\)
+Start->Anaconda (64-bit) -> Anaconda Prompt (anaconda3)
 ```
-
 A command-box will appear. In the command box, __cd__ into your __viz\_home__:
 ```
 cd viz_home
@@ -97,9 +95,8 @@ Enter the following command in the command box to launch your webserver:
 ```
 python -m http.server 8888
 ```
-
 The __8888__ parameter in the command you just entered is the number of the __port__ on which
-your webserver will be "listening for traffic", i.e., listening for requests to display a web page \(and in our
+your webserver will be "listening for traffic", i.e., listening for requests to display a web page \(in our
 case, display a data visualizaiton\).
 
 Let's make sure our webserver is working. To do this:
@@ -109,13 +106,12 @@ Let's make sure our webserver is working. To do this:
 ```
 http://localhost:8888
 ```
-
 If you've done everyting correctly thus far, you'll see a page displaying the text "Hello, world!"
 
 Notes: 
 1. The __localhost__ in the URL you just enetered refers to the webserver that you just launched on your PC (your "local host".)
 2. The __8888__ is the number of the port on which the webserver is listening for requests.
-3. By default, this webserver (and most webservers, in general, are configured to render the page named __index.html__ in their "root" directory.
+3. By default, this webserver (and most webservers, in general\) are configured to render the page named __index.html__ in their "root" directory.
 
 However, you can request a page in the root directory explicitly. Try entering the following in the address bar of your web browser:
 ```
