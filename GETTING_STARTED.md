@@ -153,7 +153,7 @@ Open the file __first\_visualization.html__ in your chosen text editor.
 Like all HTML files, it's top level strucutre: it consists of a \<head\> and a \<body\> tag.
 Let's take a look at the contents of each of these, drilling down for detail when appropriate.
 
-#### The <head>
+#### The \<head\> tag
 The contents of the \<head\> tag are:
 ```
 <head>
@@ -167,7 +167,7 @@ That's all there is to it.
 
 #### The \<body\> tag
 The contents of the \<body\> tag are divided into two parts:
-1. a \<div>\ tag, and
+1. a \<div\> tag, and
 2. a \<script\> tag
 
 ##### The \<div\> tag
