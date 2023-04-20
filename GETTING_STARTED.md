@@ -150,11 +150,11 @@ using a different dataset.
 
 ### 3. Looking under the hood
 Open the file __first\_visualization.html__ in your chosen text editor.
-Like all HTML files, it's top level strucutre: it consists of a <head> and a <body> tag.
+Like all HTML files, it's top level strucutre: it consists of a \<head\> and a \<body\> tag.
 Let's take a look at the contents of each of these, drilling down for detail when appropriate.
 
 #### The <head>
-The contents of the <head> tag are:
+The contents of the \<head\> tag are:
 ```
 <head>
 	<!-- Load plotly.js library from a CDN -->
@@ -165,12 +165,12 @@ All that's going on here is that the web browser is being told to download the s
 JavaScript library from a Content Delivery Network (CDN), so it can be used subsequently to generate visualizations.
 That's all there is to it.
 
-#### The <body> tag
-The contents of the <body> tag are divided into two parts:
-1. a <div> tag, and
-2. a <script> tag
+#### The \<body\> tag
+The contents of the \<body\> tag are divided into two parts:
+1. a \<div>\ tag, and
+2. a \<script\> tag
 
-##### The <div> tag
+##### The \<div\> tag
 The \<div\> tag defines a rectangular space (a "block-level element" in web-lingo) on the web page into which our visualization will be placed.
 A page can contain an arbitrary number of \<div\> elements. 
 In order to tell our viz-generating code to place our visualization into __this__ \<div\>, we need some way to identify it.
@@ -180,9 +180,9 @@ This is accomplished by adding an __id__ property to the \<div\> tag. This is do
 ```
 As you can see, the __id__ of this \<div\> is __myDiv__.
 
-##### The <script> tag
-The <script> tag contains executable JavaScript code \(really not all that much!\) to generate the visualization. 
-Unlike the <script> tag in the \<head\> element, rather than pulling in JavaScript code from an external source,
+##### The \<script\> tag
+The \<script\> tag contains executable JavaScript code \(really not all that much!\) to generate the visualization. 
+Unlike the \<script\> tag in the \<head\> element, rather than pulling in JavaScript code from an external source,
 this block of JavaScript code appears in-line.
 
 This block of JavaSdript code has three parts:
