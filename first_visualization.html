@@ -1,0 +1,32 @@
+<html>
+<head>
+	<!-- Load plotly.js library from a CDN -->
+	<script src='https://cdn.plot.ly/plotly-2.20.0.min.js'></script>
+</head>
+
+<body>
+	<div id='myDiv'> <!-- Plotly chart will be drawn inside this DIV -->
+	</div>
+
+<script>
+
+// The following statement defines:
+//     1. the data to be plotted,
+//     2. the label associated with each data value, and
+//     3. the type of visualization to generate.
+var data = [{ 	values: [38.9, 34.0, 14.3, 5.7, 3.4, 2.4, 1.4],
+				labels: ['Drive Alone', 'Transit', 'Walk', 'Carpool', 'WFH', 'Bike', 'Other'],
+				type: 'pie'
+           }];
+
+// The following statement defines the dimensions (in pixels) of the "div" in which the viz will be generated:
+var layout = {  height: 800,
+				width: 1000
+             };
+
+// The following statement generates the viz
+Plotly.newPlot('myDiv', data, layout);
+</script>
+
+</body>
+</html>
