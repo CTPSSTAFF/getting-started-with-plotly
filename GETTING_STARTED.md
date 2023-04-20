@@ -126,7 +126,8 @@ http://localhost:8888/index2.html
 And you'll see that a different page is now displayed.
 
 ### 3. Creating your first visualization
-Our first visualization will be a pie chart displaying transportation mode share data for the City of Boston between 1990 and 2014.
+Our first visualization will be a pie chart displaying
+[transportation mode share data for the City of Boston between 1990 and 2014](https://www.boston.gov/sites/default/files/file/document_files/2017/03/go_boston_2030_-_3_boston_today_spreads.pdf).
 The data for this visualization is obviously pre-pandemic, so bear this in mind.
 
 Let's the HTML page with this visualization into your web browser \(don't worry, all the work has already been done for you\),
@@ -149,6 +150,86 @@ using a different dataset.
 
 ### 3. Looking under the hood
 Open the file __first\_visualization.html__ in your chosen text editor.
+Like all HTML files, it's top level strucutre: it consists of a <head> and a <body> tag.
+Let's take a look at the contents of each of these, drilling down for detail when appropriate.
+
+#### The <head>
+The contents of the <head> tag are:
+```
+<head>
+	<!-- Load plotly.js library from a CDN -->
+	<script src='https://cdn.plot.ly/plotly-2.20.0.min.js'></script>
+</head>
+```
+All that's going on here is that the web browser is being told to download the source code for the plotly 
+JavaScript library from a Content Delivery Network (CDN), so it can be used subsequently to generate visualizations.
+That's all there is to it.
+
+#### The <body> tag
+The contents of the <body> tag are divided into two parts:
+1. a <div> tag, and
+2. a <script> tag
+
+##### The <div> tag
+The <div> tag defines a rectangular space (a "block-level element" in web-lingo) on the web page into which our visualization will be placed.
+A page can contain an arbitrary number of <div> elements. 
+In order to tell our viz-generating code to place our visualization into __this__ <div>, we need some way to identify it.
+This is accomplished by adding an __id__ property to the <div> tag. This is done as follows:
+```
+<div id='myDiv'> 
+```
+As you can see, the __id__ of this <div> is __myDiv__.
+
+##### The <script> tag
+The <script> tag contains executable JavaScript code \(really not all that much!\) to generate the visualization. 
+Unlike the <script> tag in the <head> element, rather than pulling in JavaScript code from an external source,
+this block of JavaScript code appears in-line.
+
+This block of JavaSdript code has three parts:
+1. definition of the data to be rendered and the type of chart to generate
+2. definition of the dimensions of the <div> into which the chart will be rendered
+3. a call to the plotly library to generate the viz-generating
+Each of these sections is commented in the code, but we'll walk through each one in turn.
+
+__The Data__  
+The relevant code block:
+```
+var data = [{ 	values: [38.9, 34.0, 14.3, 5.7, 3.4, 2.4, 1.4],
+				labels: ['Drive Alone', 'Transit', 'Walk', 'Carpool', 'WFH', 'Bike', 'Other'],
+				type: 'pie'
+           }];
+```
+Without going into the details of the JavaScript syntax used here (I'm happy to do so offline), 
+you'll see that there are a pair of parallell arrays of values (mode-share percentages) and
+labels associated with those values. So, for example, this dataset indicates that 34.0 percent 
+of people used transit to commute in Boston in the period 1990-2014.
+There is also an indication of the type of visualization to generate: a __pie__ chart.
+
+__Dimensions of the Plotting Area__  
+The relevant code block:
+```
+var layout = {  height: 800,
+				width: 1000
+             };
+```
+This piece of code defines a JavaScript Object (sorry, I couldn't resist) with two key-value pairs.
+These specify the height and width of the <div> into which our viz will be generated. Hard-core web geeks
+might ask why these dimensions aren't specified as properties of the <div> tag discussed above.
+The answer is: no reason at all. These dimensions could alternatively be defined as properties
+of the __myDiv__ <div>. Sometimes there is more than one way to accomplish a single thing.
+
+__Generation of the Viz__
+The relevant code block (just a one-liner):
+```
+Plotly.newPlot('myDiv', data, layout);
+```
+Here, we call Plotly's __newPlot__ function to generate our pie chart. The three parameters passed to the newPlot call are:
+1. the __id__ of the <div> into which to place the chart
+2. the data to render
+3. a definition of the layout of the <div>
+That's it.  
+
+Now that you've generated your first viz, the next step is to tweak it and find out what happens when we do so.
 
 ### 4. Tweaking your visualization
 
