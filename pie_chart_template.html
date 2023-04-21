@@ -12,12 +12,13 @@
 
 // The following statement defines:
 //     1. the data to be plotted,
-//     2. the label associated with each data value, and
-//     3. the type of visualization to generate.
+//     2. the label associated with each data value
+//     3. the type of visualization to generate
+//     4. the text to display in each sector of the pie chart
+//     5. the text to display in the 'on-hover' toolip for the chart
 var data = [{ 	values: [617594, 105162, 75754, 58732, 85146],
 				labels: ['Boston', 'Cambridge', 'Somerville', 'Brookline', 'Newton'],
 				type: 'pie',
-				name: 'Population 2010',
 				textinfo: 'label+percent',					// Show label and percentage as the text for each sector of the pie chard
 				hoverinfo: "label+value+percent"		// Show label, raw value, and percentage in on-hover tooltip
            }];
