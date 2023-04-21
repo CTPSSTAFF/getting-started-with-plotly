@@ -348,8 +348,91 @@ and maybe even trying one or two other ones, inspired by reading the plotly docu
 ## Plotly visualization 102 - visualation templates
 
 ### Pie chart
+You're already familiar with creating a pie-chart visualization from working with __first\_visualizaiton.html__.
+The __pie\_chart\_template.html renders a pie chart of the population of five cities and towns in the
+core of the Boston region: Boston itself, Cambridge, Somerville, Brookline, and Newton.
+This template includes a couple of features commonly desired in pie charts that are given 'default' 
+behavior in __first\_visualizaiton.html__; they are:
+ adds a few features that might commonly be desired:
+* control of the labels for each sector of the chart
+* control of the on-hover tool tip for the sectors of the chart
+
+Everything is bundled up nicely in the data object passed to plotly.
+The relevant code reads as follows:
+```
+var data = [{ 	values: [617594, 105162, 75754, 58732, 85146],
+				labels: ['Boston', 'Cambridge', 'Somerville', 'Brookline', 'Newton'],
+				type: 'pie',
+				textinfo: 'label+percent',				// Show label and percentage as the text for each sector of the pie chard
+				hoverinfo: "label+value+percent"		// Show label, raw value, and percentage in on-hover tooltip
+           }];
+```
+
+The __textinfo__ property specifies that the __label__ (i.e., the city or town name) for each sector and
+the actual data __value__ (in this case, the population of the corresponding town) is diplayed in each sector
+of the pie chart.
+
+The __hoverinfo__ property specifies that the label, actual data value, and relative __percent__age is
+shown in the 'on-hover' tooltip for this visualization.
 
 ### Bar chart
+The template for bar charts __bar\_chart\_template.html__ renders a bar chart
+that displays the weight of six candy bars (get it?) sold in the UK.
+The data was taken from a page on the [Confectionary News](https://www.confectionerynews.com/Article/2015/11/13/Chocolate-bar-sizes-Historic-comparison-of-Hershey-s-and-Mars-bars)
+website; the weight of the candy bars is given in grams.
+This template includes labels for the x- and y-axes as well as a title for the viz as a whole.
+Let's take a look at each interesting part of this viz.
+
+The code block for the __data__ object is:
+```
+var data = [{ 	x: ["Kit Kat", "Mars", "Snickers", "Tiwx", "Reese's", "Hershey"],
+                y: [45, 51, 48, 50, 42, 42],
+				type: 'bar'
+           }];
+```
+Unlike a pie chart, for which we supply an array of labels and an array of values, 
+for a __bar chart__ we supply an array of x-axis values (most commonly, these are labels)
+and an array of y-axis values. 
+In this case, the x-axis values are the names of candy bars;
+the y-axis values are the weight of each corresponding candy bar.
+
+Labeling the axes of a bar chart is done by adding xaxis and yaxis properties
+to the __layout__ object:
+```
+var layout = {  height: 800,
+				width: 1000,
+				title: 'Weight of Candy Bars in the UK',
+				xaxis: { title: "Candy Bars (OK. We know Reese's isn't a candy bar, but this is just a template.)" },
+				yaxis: { title: 'Weight in grams' }
+             };
+```
+The __xaxis__ and __yaxis__ properties are themselves JavaScript objects, and each can contain many different properties.
+In this case, all we need to do is to add a __title__ property to each one.
+
+If we want to get fancy, we can specify the font for each axis's title.
+Try the following on your own:
+```
+var layout = {  height: 800,
+				width: 1000,
+				title: 'Weight of Candy Bars in the UK',
+				xaxis: { title: { 	text: "Candy Bars (OK. We know Reese's isn't a candy bar, but this is just a template.)",
+									font: { family: 'Arial',
+											 color:  'black',
+											 size:   20
+										   }
+								}
+						},
+				yaxis: { title: {	text: 'Weight in grams',
+									font: { family: 'Courrier',
+											color:  'red',
+											size: 	22
+									}
+								}
+						}
+             };
+```
+The result mightn't look all that great, but that's the point!
+Feel free to play with the values of the font properties until the axis labels look nice.
 
 ### Line chart
 
