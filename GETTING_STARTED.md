@@ -473,5 +473,62 @@ var data = = [ line1 ];
 In the plotly world, scatter plots are very closely related to line charts.
 The __scatter\_plot\_template.html__ consequently strongly resembles the __line\_chart\_template.html__.
 
+The essential difference is the value of the __mode__ property in the JavaScript object
+defining each array of values to plot.
+When generating a scatter plot, the value of the __mode__ property is __markers__ rather than lines.
+For example:
+```
+var points1 = {	x: [1, 2, 3, 4],
+				y: [10, 15, 13, 17],
+				mode: 'markers',			// Render points, do not connect points with lines
+				name: 'Dataset 1'			// Name given to this line in the legend
+};
+```
+
+As was the case for line plots, an array of objects defining each set of points to plot must be specified
+as the data value passed to Plotly.newPlot. For example, to generate a plot of
+three sets of points, you might write:
+```
+var data = [ points1, points2, points3 ];
+```
+Similarly, even if you have only one set of points to plot, you still must pass an array 
+as the data parameter to Plotly.newPlot - again, an array containing one element:
+```
+var data = [ points1 ];
+```
+
+#### Getting a little fancy
+The Plotly API for generating line plots and scatter plots is essentially the same.
+The only difference is the value of the __mode__ property of the JavaScript object
+that defines each set of points to plot.
+If you guessed that you can combine a line plot and a scatter plot in the
+same visualiation, your guess would be correct!
+
+Consider giving the following a try:
+```
+var line = {	x: [1, 2, 3, 4],
+				y: [10, 15, 13, 17],
+				mode: 'lines',
+				name: 'Dataset 1'
+};
+var points = {	x: [2, 3, 4, 5],
+				y: [16, 5, 11, 9],
+				mode: 'markers',
+				name: 'Dataset 2'
+};
+
+var data = [ line, points ];
+
+var layout = {  height: 800,
+				width: 1000,
+				title: 'Line chart + scatter plot',
+				xaxis: { title: 'x-axis title' },
+				yaxis: { title: 'y-axis title' }
+             };
+
+// The following statement generates the viz
+Plotly.newPlot('myDiv', data, layout);
+```
+
 ### Map
 
