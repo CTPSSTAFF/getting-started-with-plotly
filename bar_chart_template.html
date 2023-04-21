@@ -1,0 +1,35 @@
+<html>
+<head>
+	<!-- Load plotly.js library from a CDN -->
+	<script src='https://cdn.plot.ly/plotly-2.20.0.min.js'></script>
+</head>
+
+<body>
+	<div id='my_bar_chart_div'> <!-- Plotly chart will be drawn inside this DIV -->
+	</div>
+
+<script>
+
+// The following statement defines:
+//     1. the values (labels) on the x-axis of the plot
+//     2. the values to be plotted on the y-axis of the plot
+//     3. the type of visualization to generate.
+// Data source: https://www.confectionerynews.com/Article/2015/11/13/Chocolate-bar-sizes-Historic-comparison-of-Hershey-s-and-Mars-bars
+//
+var data = [{ 	x: ["Kit Kat", "Mars", "Snickers", "Tiwx", "Reese's", "Hershey"],
+                y: [45, 51, 48, 50, 42, 42],
+				type: 'bar'
+           }];
+
+// The following statement defines the dimensions (in pixels) of the "div" in which the viz will be generated:
+var layout = {  height: 800,
+				width: 1000,
+				title: 'Weight of Candy Bars (in grams) in the UK'
+             };
+
+// The following statement generates the viz
+Plotly.newPlot('my_bar_chart_div', data, layout);
+</script>
+
+</body>
+</html>
