@@ -1,0 +1,50 @@
+<html>
+<head>
+	<!-- Load plotly.js library from a CDN -->
+	<script src='https://cdn.plot.ly/plotly-2.20.0.min.js'></script>
+</head>
+
+<body>
+	<div id='myDiv'> <!-- Plotly chart will be drawn inside this DIV -->
+	</div>
+
+<script>
+
+// The following statements define:
+//     1. the (x,y) value pairs for the first line to plot, and the type ('mode') of visuzliation to generate
+//     2. the (x,y) value pairs for the second line to plot, and the type ('mode') of visualization generate
+//     3. the (x,y) value pairs for the third line to plot, and the type ('mode') of visualization generat
+var points1 = {	x: [1, 2, 3, 4],
+				y: [10, 15, 13, 17],
+				mode: 'markers',			// Render points, do not connect points with lines
+				name: 'Dataset 1'			// Name given to this line in the legend
+};
+var points2 = {	x: [2, 3, 4, 5],
+				y: [16, 5, 11, 9],
+				mode: 'markers',			// Render points, do not connect points with lines
+				name: 'Dataset 2'			// Name given to this line in the legend
+};
+var points3 = {	x: [8, 9, 10, 16],
+				y: [8, 9, 11, 13],
+				mode: 'markers',			// Render points, do not connect points with lines
+				name: 'Dataset 3'			// Name given to this line in the legend
+};
+
+// The following statement tells plotly that the data to be plotted
+// consists of the three sets of points defined above.
+var data = [ points1, points2, points3 ];
+
+// The following statement defines the dimensions (in pixels) of the "div" in which the viz will be generated:
+var layout = {  height: 800,
+				width: 1000,
+				title: 'Scatter-plot chart template',
+				xaxis: { title: 'x-axis title' },
+				yaxis: { title: 'y-axis title' }
+             };
+
+// The following statement generates the viz
+Plotly.newPlot('myDiv', data, layout);
+</script>
+
+</body>
+</html>
