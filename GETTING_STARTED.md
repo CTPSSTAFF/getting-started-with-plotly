@@ -435,8 +435,43 @@ The result mightn't look all that great, but that's the point!
 Feel free to play with the values of the font properties until the axis labels look nice.
 
 ### Line chart
+Plotly allows multiple lines of data \(i.e., arrays of pairs of \[x,y\] values\) to be plotted together.
+The __line\_chart\_template.html__ illustrates how to plot two lines in the same visualization,
+but it can be easily extended to accommodate as many lines as needed.
+
+Each line to be plotted is defined by its own JavaScript object. Let's take a look at the code
+for the first one:
+```
+var line1 = {	x: [1, 2, 3, 4],
+				y: [10, 15, 13, 17],
+				mode: 'lines',
+				name: 'Dataset 1'			// Name given to this line in the legend
+};
+```
+The meaning of the arrays of __x__ and __y__ values should be obvious.
+The value of the __mode__ property is critical: __lines__ instructs plotly to 
+generate a line connecting the set of points rather than simply rendering the points.
+The value of the __name__ property specifies the name of the line given in the 
+visualization's legend.
+
+As mentioned above, plotly allows an arbitrary number of lines to be plotted in the same 
+visualization. 
+Consequently, the data object passed to plotly when generating a line chart 
+is an __array__ of objects defiing the line(s) to be plotted.
+For example, the template defines two lines __line1__ and __line2__.
+The data passed to Plotly.newPlot consequently is an array of these two objects:
+```
+var data = = [ line1, line2 ];
+```
+If you're only plotting a single line, you still have to pass an array as the data value.
+In that case, the array would contain only a single value:
+```
+var data = = [ line1 ];
+```
 
 ### Scatter plot
+In the plotly world, scatter plots are very closely related to line charts.
+The __scatter\_plot\_template.html__ consequently strongly resembles the __line\_chart\_template.html__.
 
 ### Map
 
