@@ -232,9 +232,122 @@ That's it.
 Now that you've generated your first viz, the next step is to tweak it and find out what happens when we do so.
 
 ### 4. Tweaking your visualization
+There are an almost unlimied number of ways in which the first visualization could be tweaked.
+This tutorial focus on a few of the most common ones you might consider.
+After you become familiar with these, I recommend looking into the plotly API which gives you
+control over almost all aspects of the visualization:
+* [plotly API figure reference](https://plotly.com/javascript/reference/index/)
+* [plotly API function reference](https://plotly.com/javascript/plotlyjs-function-reference/)
+* [plotly API events reference](https://plotly.com/javascript/plotlyjs-events/) - probably not for beginners
+* [plotly API configuration options](https://plotly.com/javascript/configuration-options/)
 
+#### Changing the size of the plot
+One of the most common things you might want to do is to change the size of a plot, so it fits
+more elegantly into the page of which it will be a part. 
+This is easy, given the code that's already in the __first\_visualizaiton.html__ file.
 
+Make a copy of this file, and call it __change\_size.html__.
+Open it in your text editor of choice, and examine the definition of the __layout__ variable:
+```
+var layout = {	height: 800,
+				width: 1000
+             };
+```
+Let's reduce the dimensions of the visualization by half:
+```
+var layout = {	height: 400,
+				width: 500
+             };
+```
+Save the file, and load __change\_size.html__ into your web browser:
+```
+http://localhost:8888/change\_size.html
+```
 
+#### Changing data values and labels
+Let's change the data values for our visualization to reflect our best guess at 
+what the post-pandemic mode-share is. 
+I'll use the following values in this example;
+feel free to substitute your own: 
+| Mode | Mode Share |
+|------|------------|
+| Drive alone | 20 |
+| Transit | 25 |
+| Walk | 10 |
+| Carpool | 5 |
+| WFH | 35 |
+| Bike | 4 | 
+| Other | 1 |
+
+Make a copy of __first\_visualizaiton.html__, and call it __post\_pandemic.html__.
+Change the definition of the __data__ variable as follows:
+```
+var data = [{ 	values: [20, 25, 10, 10, 5, 35, 4, 1],
+				labels: ['Drive Alone', 'Transit', 'Walk', 'Carpool', 'WFH', 'Bike', 'Other'],
+				type: 'pie'
+           }];
+```
+While we're at it, let's change the label for the 'WFH' mode to 'Work from Home':
+```
+var data = [{ 	values: [20.0, 25.0, 10.0, 5.0, 35.0, 4.0, 1.0],
+				labels: ['Drive Alone', 'Transit', 'Walk', 'Carpool', 'Work from Home', 'Bike', 'Other'],
+				type: 'pie'
+           }];
+```
+Save the file, and load it into your browser:
+```
+http://localhost:8888/post\_pandemic.html
+```
+#### Changing colors
+If you don't tell plotly the colors to use when generating a visualization, it will make a "best guess" of its own.
+However, a software package's "best guess" is rarely what the user had in mind, so it's likelly you'll want to
+specify the colors used in a visuation yourself.
+This is done by specifying a __colors__ array in the __marker__ property of the data object in your visualization.
+\(We've not encounterd the __marker__ property before.\)
+
+For the sake of simplicity, let's say we'd like to use the seven 'colors of the rainbow' as our color palette.
+This can be done as follows:
+```
+var data = [{ 	values: [38.9, 34.0, 14.3, 5.7, 3.4, 2.4, 1.4],
+				labels: ['Drive Alone', 'Transit', 'Walk', 'Carpool', 'WFH', 'Bike', 'Other'],
+				marker: { colors: [ 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'	] },
+				type: 'pie'
+           }];
+```
+Web standards provide a variety of ways to specify colors.
+In this case we've identified each color by its [standard CSS name](https://www.w3.org/wiki/CSS/Properties/color/keywords).
+You can also specify a color by a [hexadecimal or decimal RGB value](https://www.w3.org/wiki/CSS/Properties/color/RGB).
+Please see the documentation if you'd like to use the 'RGB' method.
+
+#### Adding a title
+Finally, let's add a title to our visualization.
+This is easy; all you have to do is add a __title__ property to the __layout__ variable:
+```
+var layout = {  height: 800,
+				width: 1000,
+				title: 'Boston Mode-share: 1990-2014'
+             };
+```
+Make a copy of Make a copy of __first\_visualizaiton.html__, and call it __viz\_with\_title.html__.
+Make the change given above in this file, save it, and load it into your browser:
+```
+http://localhost:8888/viz\_with\_title.html
+```
+
+### Next steps
+You've been introduced to how to make a variety of changes to a plotly visualation - each change "in isloation."
+At this point, I recommend that you spend some time combining a variety of changes in a single visualiation,
+and maybe even trying one or two other ones, inspired by reading the plotly documentation.
 
 ## Plotly visualization 102 - visualation templates
+
+### Pie chart
+
+### Bar chart
+
+### Line chart
+
+### Scatter plot
+
+### Map
 
