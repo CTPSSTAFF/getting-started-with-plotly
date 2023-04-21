@@ -261,7 +261,7 @@ var layout = {	height: 400,
 ```
 Save the file, and load __change\_size.html__ into your web browser:
 ```
-http://localhost:8888/change\_size.html
+http://localhost:8888/change_size.html
 ```
 
 #### Changing data values and labels
@@ -296,7 +296,7 @@ var data = [{ 	values: [20.0, 25.0, 10.0, 5.0, 35.0, 4.0, 1.0],
 ```
 Save the file, and load it into your browser:
 ```
-http://localhost:8888/post\_pandemic.html
+http://localhost:8888/post_pandemic.html
 ```
 #### Changing colors
 If you don't tell plotly the colors to use when generating a visualization, it will make a "best guess" of its own.
@@ -331,7 +331,7 @@ var layout = {  height: 800,
 Make a copy of Make a copy of __first\_visualizaiton.html__, and call it __viz\_with\_title.html__.
 Make the change given above in this file, save it, and load it into your browser:
 ```
-http://localhost:8888/viz\_with\_title.html
+http://localhost:8888/viz_with_title.html
 ```
 
 ### Next steps
