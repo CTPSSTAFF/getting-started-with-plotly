@@ -1,0 +1,45 @@
+<html>
+<head>
+	<!-- Load plotly.js library from a CDN -->
+	<script src='https://cdn.plot.ly/plotly-2.20.0.min.js'></script>
+</head>
+
+<body>
+	<div id='myDiv'> <!-- Plotly chart will be drawn inside this DIV -->
+	</div>
+
+<script>
+
+// The following two statements defines\:
+//     1. the (x,y) value pairs for the first line to plot, and the type ('mode') of visuzliation to generate
+//     2. the (x,y) value pairs for the second line to plot, and the type ('mode') of visualization generate
+//     3. the type of visualization to generate.
+var line1 = {	x: [1, 2, 3, 4],
+				y: [10, 15, 13, 17],
+				mode: 'lines',
+				name: 'Dataset 1'			// Name given to this line in the legend
+};
+var line2 = {	x: [2, 3, 4, 5],
+				y: [16, 5, 11, 9],
+				mode: 'lines',
+				name: 'Dataset 2'			// Name given to this line in the legend
+};
+
+// The following statement tells plotly that the data to be plotted
+// consists of the two lines defined above.
+var data = [ line1, line2 ];
+
+// The following statement defines the dimensions (in pixels) of the "div" in which the viz will be generated:
+var layout = {  height: 800,
+				width: 1000,
+				title: 'Line chart template',
+				xaxis: { title: 'x-axis title' },
+				yaxis: { title: 'y-axis title' }
+             };
+
+// The following statement generates the viz
+Plotly.newPlot('myDiv', data, layout);
+</script>
+
+</body>
+</html>
