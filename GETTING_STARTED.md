@@ -233,14 +233,20 @@ Now that you've generated your first viz, the next step is to tweak it and find 
 
 ### 4. Tweaking your visualization
 There are an almost unlimied number of ways in which the first visualization could be tweaked.
-This tutorial focus on a few of the most common ones you might consider.
-After you become familiar with these, I recommend looking into the plotly API which gives you
+This tutorial focus on a few of the most common tweaks you might have in mind:
+* Changing the size of the plot
+* Changing data values and labels
+* Changing colors
+* Adding a title
+
+After you become familiar with these, I recommend looking into the plotly API which gives the user
 control over almost all aspects of the visualization:
 * [plotly API figure reference](https://plotly.com/javascript/reference/index/)
 * [plotly API function reference](https://plotly.com/javascript/plotlyjs-function-reference/)
 * [plotly API events reference](https://plotly.com/javascript/plotlyjs-events/) - probably not for beginners
 * [plotly API configuration options](https://plotly.com/javascript/configuration-options/)
 
+Let's get going.
 #### Changing the size of the plot
 One of the most common things you might want to do is to change the size of a plot, so it fits
 more elegantly into the page of which it will be a part. 
