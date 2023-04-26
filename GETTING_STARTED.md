@@ -20,7 +20,7 @@ If it's not installed on your laptop, inform CPTS's Computer Resources group and
 to have it installed.
 
 ### A text editor
-In order to create data visualization with plotly, ou'll need a way to edit (create and modify) __text__ files.
+In order to create data visualization with plotly, you'll need a way to edit (create and modify) __text__ files.
 Such a tool is called a __text editor__.
 Text files _can_ be edited with Window's built-in _Notepad_ utility. But because _Notepad_ has _very_ limited functionality,
 using it to do anything beyond the most elementary editing quickly becomes frustrating.
@@ -50,7 +50,7 @@ when developing plotly. __Please note: A folder in Google Drive is not suitable 
 ## Plotly visualization 101
 This section will walk you through creating your first visualization with plotly - a pie chart that 
 displays the transportation "mode share" for the City of Boston from 1990 to 2014. 
-The data was taken from a document on the City of Boston's website (
+The data was taken from a document on the City of Boston's website.
 The structure of the code have been unashamedly borrowed from plotly's own website, 
 but I've added quite a bit of background information that's not given there.
 
@@ -111,7 +111,7 @@ However, you can request a page in the root directory explicitly. Try entering t
 ```
 http://localhost:8888/index.html
 ```
-The very same page will be displayed.  
+The very same page will be displayed.    
 Now try:
 ```
 http://localhost:8888/index2.html
@@ -188,8 +188,8 @@ __The Data__
 The relevant code block:
 ```
 var data = [{ 	values: [38.9, 34.0, 14.3, 5.7, 3.4, 2.4, 1.4],
-				labels: ['Drive Alone', 'Transit', 'Walk', 'Carpool', 'WFH', 'Bike', 'Other'],
-				type: 'pie'
+		labels: ['Drive Alone', 'Transit', 'Walk', 'Carpool', 'WFH', 'Bike', 'Other'],
+		type: 'pie'
            }];
 ```
 Without going into the details of the JavaScript syntax used here (I'm happy to do so offline), 
@@ -202,7 +202,7 @@ __Dimensions of the Plotting Area__
 The relevant code block:
 ```
 var layout = {	height: 800,
-				width: 1000
+		width: 1000
              };
 ```
 This piece of code defines a JavaScript Object (sorry, I couldn't resist) with two key-value pairs.
@@ -249,13 +249,13 @@ Make a copy of this file, and call it __change\_size.html__.
 Open it in your text editor of choice, and examine the definition of the __layout__ variable:
 ```
 var layout = {	height: 800,
-				width: 1000
+		width: 1000
              };
 ```
 Let's reduce the dimensions of the visualization by half:
 ```
 var layout = {	height: 400,
-				width: 500
+		width: 500
              };
 ```
 Save the file, and load __change\_size.html__ into your web browser:
@@ -282,15 +282,15 @@ Make a copy of __first\_visualizaiton.html__, and call it __post\_pandemic.html_
 Change the definition of the __data__ variable as follows:
 ```
 var data = [{ 	values: [20, 25, 10, 10, 5, 35, 4, 1],
-				labels: ['Drive Alone', 'Transit', 'Walk', 'Carpool', 'WFH', 'Bike', 'Other'],
-				type: 'pie'
+		labels: ['Drive Alone', 'Transit', 'Walk', 'Carpool', 'WFH', 'Bike', 'Other'],
+		type: 'pie'
            }];
 ```
 While we're at it, let's change the label for the 'WFH' mode to 'Work from Home':
 ```
 var data = [{ 	values: [20.0, 25.0, 10.0, 5.0, 35.0, 4.0, 1.0],
-				labels: ['Drive Alone', 'Transit', 'Walk', 'Carpool', 'Work from Home', 'Bike', 'Other'],
-				type: 'pie'
+		labels: ['Drive Alone', 'Transit', 'Walk', 'Carpool', 'Work from Home', 'Bike', 'Other'],
+		ype: 'pie'
            }];
 ```
 Save the file, and load it into your browser:
@@ -308,9 +308,9 @@ For the sake of simplicity, let's say we'd like to use the seven 'colors of the 
 This can be done as follows:
 ```
 var data = [{ 	values: [38.9, 34.0, 14.3, 5.7, 3.4, 2.4, 1.4],
-				labels: ['Drive Alone', 'Transit', 'Walk', 'Carpool', 'WFH', 'Bike', 'Other'],
-				marker: { colors: [ 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'	] },
-				type: 'pie'
+		labels: ['Drive Alone', 'Transit', 'Walk', 'Carpool', 'WFH', 'Bike', 'Other'],
+		marker: { colors: [ 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'	] },
+		type: 'pie'
            }];
 ```
 Web standards provide a variety of ways to specify colors.
@@ -323,8 +323,8 @@ Finally, let's add a title to our visualization.
 This is easy; all you have to do is add a __title__ property to the __layout__ variable:
 ```
 var layout = {  height: 800,
-				width: 1000,
-				title: 'Boston Mode-share: 1990-2014'
+		width: 1000,
+		title: 'Boston Mode-share: 1990-2014'
              };
 ```
 Make a copy of Make a copy of __first\_visualizaiton.html__, and call it __viz\_with\_title.html__.
@@ -354,10 +354,10 @@ Everything is bundled up nicely in the data object passed to plotly.
 The relevant code reads as follows:
 ```
 var data = [{ 	values: [617594, 105162, 75754, 58732, 85146],
-				labels: ['Boston', 'Cambridge', 'Somerville', 'Brookline', 'Newton'],
-				type: 'pie',
-				textinfo: 'label+percent',				// Show label and percentage as the text for each sector of the pie chard
-				hoverinfo: "label+value+percent"		// Show label, raw value, and percentage in on-hover tooltip
+		labels: ['Boston', 'Cambridge', 'Somerville', 'Brookline', 'Newton'],
+		type: 'pie',
+		textinfo: 'label+percent',		// Show label and percentage as the text for each sector of the pie chard
+		hoverinfo: "label+value+percent"	// Show label, raw value, and percentage in on-hover tooltip
            }];
 ```
 
@@ -380,7 +380,7 @@ The code block for the __data__ object is:
 ```
 var data = [{ 	x: ["Kit Kat", "Mars", "Snickers", "Tiwx", "Reese's", "Hershey"],
                 y: [45, 51, 48, 50, 42, 42],
-				type: 'bar'
+		type: 'bar'
            }];
 ```
 Unlike a pie chart, for which we supply an array of labels and an array of values, 
@@ -393,10 +393,10 @@ Labeling the axes of a bar chart is done by adding xaxis and yaxis properties
 to the __layout__ object:
 ```
 var layout = {  height: 800,
-				width: 1000,
-				title: 'Weight of Candy Bars in the UK',
-				xaxis: { title: "Candy Bars (OK. We know Reese's isn't a candy bar, but this is just a template.)" },
-				yaxis: { title: 'Weight in grams' }
+		width: 1000,
+		title: 'Weight of Candy Bars in the UK',
+		xaxis: { title: "Candy Bars (OK. We know Reese's isn't a candy bar, but this is just a template.)" },
+		yaxis: { title: 'Weight in grams' }
              };
 ```
 The __xaxis__ and __yaxis__ properties are themselves JavaScript objects, and each can contain many different properties.
@@ -406,22 +406,22 @@ If we want to get fancy, we can specify the font for each axis's title.
 Try the following on your own:
 ```
 var layout = {  height: 800,
-				width: 1000,
-				title: 'Weight of Candy Bars in the UK',
-				xaxis: { title: { 	text: "Candy Bars (OK. We know Reese's isn't a candy bar, but this is just a template.)",
-									font: { family: 'Arial',
-											 color:  'black',
-											 size:   20
-										   }
-								}
-						},
-				yaxis: { title: {	text: 'Weight in grams',
-									font: { family: 'Courrier',
-											color:  'red',
-											size: 	22
-									}
-								}
+		width: 1000,
+		title: 'Weight of Candy Bars in the UK',
+		xaxis: { title: { 	text: "Candy Bars (OK. We know Reese's isn't a candy bar, but this is just a template.)",
+					font: { 	family: 'Arial',
+						 	color:  'black',
+							size:   20
 						}
+				}
+			},
+		yaxis: { title: {	text: 'Weight in grams',
+					font: { family: 'Courrier',
+						color:  'red',
+						size: 	22
+						}
+				}
+			}
              };
 ```
 The result mightn't look all that great, but that's the point!
@@ -436,9 +436,9 @@ Each line to be plotted is defined by its own JavaScript object. Let's take a lo
 for the first one:
 ```
 var line1 = {	x: [1, 2, 3, 4],
-				y: [10, 15, 13, 17],
-				mode: 'lines',
-				name: 'Dataset 1'			// Name given to this line in the legend
+		y: [10, 15, 13, 17],
+		mode: 'lines',
+		name: 'Dataset 1'			// Name given to this line in the legend
 };
 ```
 The meaning of the arrays of __x__ and __y__ values should be obvious.
@@ -472,9 +472,9 @@ When generating a scatter plot, the value of the __mode__ property is __markers_
 For example:
 ```
 var points1 = {	x: [1, 2, 3, 4],
-				y: [10, 15, 13, 17],
-				mode: 'markers',			// Render points, do not connect points with lines
-				name: 'Dataset 1'			// Name given to this line in the legend
+		y: [10, 15, 13, 17],
+		mode: 'markers',			// Render points, do not connect points with lines
+		name: 'Dataset 1'			// Name given to this line in the legend
 };
 ```
 
@@ -500,23 +500,23 @@ same visualiation, your guess would be correct!
 Consider giving the following a try:
 ```
 var line = {	x: [1, 2, 3, 4],
-				y: [10, 15, 13, 17],
-				mode: 'lines',
-				name: 'Dataset 1'
+		y: [10, 15, 13, 17],
+		mode: 'lines',
+		name: 'Dataset 1'
 };
 var points = {	x: [2, 3, 4, 5],
-				y: [16, 5, 11, 9],
-				mode: 'markers',
-				name: 'Dataset 2'
+		y: [16, 5, 11, 9],
+		mode: 'markers',
+		name: 'Dataset 2'
 };
 
 var data = [ line, points ];
 
 var layout = {  height: 800,
-				width: 1000,
-				title: 'Line chart + scatter plot',
-				xaxis: { title: 'x-axis title' },
-				yaxis: { title: 'y-axis title' }
+		width: 1000,
+		title: 'Line chart + scatter plot',
+		xaxis: { title: 'x-axis title' },
+		yaxis: { title: 'y-axis title' }
              };
 
 // The following statement generates the viz
