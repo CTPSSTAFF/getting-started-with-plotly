@@ -44,7 +44,7 @@ are recommended for people whose work involves writing a lot of code in general 
 Finally, die-hard nerds might consider [GNU Emacs](https://www.gnu.org/software/emacs/) or [Vim](https://www.vim.org/download.php).
 Emacs is the preferred editor of the suspecies of nerd found in the MIT habitat; Vim is preferred by the subspieces found in the Bell Labs habitat.
 
-__Note:__ Microsoft _Word_ is __not__ a _text eitor_; it is a _word processor_. __Do not use MS Word to create data visualizations!__
+__Note:__ Microsoft _Word_ is __not__ a _text editor_; it is a _word processor_. __Do not use MS Word to create data visualizations!__
 Text editors work with text __as-is__, whereas word processors add all kinds of fancy-dancy formatting "stuff" to the raw text you enter. 
 This formatting "stuff" gets written to disk along with the raw text you've entered, and will confuse the software \(the plotly library
 and the plotly instructions you enter\) when plotly tries to generate a data visualization. \(For those who are curious, a useful
